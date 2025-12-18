@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I A Computer Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121822;
+      --green: #39ff14;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(57,255,20,0.15);
+    }
+    nav h1 { color: var(--green); font-size: 1.2rem; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--green); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero h2 { font-size: 2.6rem; color: var(--green); }
+    .hero p { margin-top: 1rem; color: var(--muted); max-width: 520px; }
+
+    .cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      background: var(--green);
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .illustration {
+      background: radial-gradient(circle at top left, #1f293d, #0b0f14);
+      border: 1px solid rgba(57,255,20,0.15);
+      border-radius: 18px;
+      padding: 2.5rem;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    section {
+      padding: 3.5rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title { font-size: 1.7rem; color: var(--green); margin-bottom: 2rem; text-align: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--card);
+      padding: 1.8rem;
+      border-radius: 14px;
+      border: 1px solid rgba(57,255,20,0.15);
+    }
+    .card h3 { color: var(--green); margin-bottom: 0.75rem; font-size: 1.25rem; }
+    .card p { color: var(--muted); }
+
+    .why ul { list-style: none; }
+    .why li::before { content: "✓"; color: var(--green); margin-right: 0.6rem; }
+
+    /* WhatsApp Floating Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #000;
+      padding: 0.8rem 1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(57,255,20,0.15);
+    }
+
+    /* Mobile polish */
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 0.8rem; }
+      .hero { padding: 3rem 1.2rem; }
+      .hero h2 { font-size: 2rem; }
+      section { padding: 3rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>I A Academy</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="training.html">Training</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <h2>Digital Services & Computer Training</h2>
+      <p>
+        Practical computer skills and reliable cyber services for students, individuals, and small businesses in our community.
+      </p>
+      <a class="cta" href="contact.html">Visit or Contact Us</a>
+    </div>
+    <div class="illustration">💻🎓</div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🖨 Cyber & Office Services</h3>
+        <p>Photocopy, Printing, Binding, Laminating, Typing, Assignments, School Projects, Payslips.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Digital Solutions</h3>
+        <p>Website Design, Online Registrations, Document Formatting, Basic Tech Support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Training Programmes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎓 Professional Skills</h3>
+        <p>Website Design, CorelDRAW, AutoCAD.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Office Skills</h3>
+        <p>Microsoft Word, Excel, PowerPoint.</p>
+      </div>
+      <div class="card">
+        <h3>🖥 Beginner Courses</h3>
+        <p>Computer Appreciation, Basic Operations, Internet & Email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <h2 class="section-title">Why Choose I A Computer Academy?</h2>
+    <div class="card">
+      <ul>
+        <li>Community-focused and beginner-friendly</li>
+        <li>Affordable and flexible training fees</li>
+        <li>Practical, hands-on learning</li>
+        <li>Reliable everyday computer services</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 I A Computer Academy. Serving our community with digital skills.
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/2348131999966" target="_blank">💬 WhatsApp Us</a>
+
+</body>
+</html>

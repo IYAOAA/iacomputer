@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I A Computer Academy | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121822;
+      --green: #39ff14;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(57,255,20,0.15);
+    }
+    nav h1 { color: var(--green); font-size: 1.2rem; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--green); }
+    header {
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a2233, var(--bg));
+    }
+    header h2 {
+      font-size: 2.4rem;
+      color: var(--green);
+    }
+    header p {
+      margin-top: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--muted);
+    }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 1.7rem;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 14px;
+      border: 1px solid rgba(57,255,20,0.15);
+      text-align: center;
+    }
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .card p { color: var(--muted); }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>I A Academy</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="training.html">Training</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Contact Us</h2>
+    <p>Reach out to us for computer services, training enquiries, or general assistance.</p>
+  </header>
+
+  <section>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Visit Our Shop</h3>
+        <p>Come to our centre during working hours for quick and reliable computer services.</p>
+      </div>
+      <div class="card">
+        <h3>Call or WhatsApp</h3>
+        <p>Phone: 0813 199 9966<br>WhatsApp available</p>
+      </div>
+      <div class="card">
+        <h3>Email Us</h3>
+        <p>iacomputeracademy@email.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 I A Computer Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>

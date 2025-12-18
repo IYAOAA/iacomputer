@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I A Computer Academy | Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #121822;
+      --green: #39ff14;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(57,255,20,0.15);
+    }
+    nav h1 { color: var(--green); font-size: 1.2rem; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--green); }
+    header {
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a2233, var(--bg));
+    }
+    header h2 {
+      font-size: 2.4rem;
+      color: var(--green);
+    }
+    header p {
+      margin-top: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--muted);
+    }
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 1.7rem;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.6rem;
+      border-radius: 14px;
+      border: 1px solid rgba(57,255,20,0.15);
+    }
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+    ul { list-style: none; }
+    ul li::before {
+      content: "•";
+      color: var(--green);
+      margin-right: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>I A Academy</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Digital Skills Training</h2>
+    <p>Practical, hands-on computer training designed to build real-world digital skills.</p>
+  </header>
+
+  <section>
+    <h2 class="section-title">Our Training Programmes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Professional Courses</h3>
+        <ul>
+          <li>Website Design Training</li>
+          <li>CorelDRAW (Graphics Design)</li>
+          <li>AutoCAD</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Office & Productivity Skills</h3>
+        <ul>
+          <li>Microsoft Word</li>
+          <li>Microsoft Excel</li>
+          <li>PowerPoint Basics</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Beginner Courses</h3>
+        <ul>
+          <li>Computer Appreciation</li>
+          <li>Basic Computer Operations</li>
+          <li>Internet & Email Skills</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why Learn With Us?</h2>
+    <div class="grid">
+      <div class="card">
+        <ul>
+          <li>Small class sizes</li>
+          <li>Practical, hands-on training</li>
+          <li>Affordable fees</li>
+          <li>Beginner-friendly approach</li>
+          <li>Community-focused learning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 I A Computer Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>
