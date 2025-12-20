@@ -37,3 +37,36 @@ nav {
 .brand {
   text-decoration: none;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand img {
+  height: 38px;
+  width: auto;
+}
+
+.brand h1 {
+  color: var(--green);
+  font-size: 1.2rem;
+}
