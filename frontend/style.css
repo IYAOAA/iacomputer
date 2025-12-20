@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #0b0f14;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  height: 40px;
+  width: auto;
+}
+
+.brand h1 {
+  font-size: 20px;
+  color: #39ff14;
+  margin: 0;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #39ff14;
+}
+
+.brand {
+  text-decoration: none;
+}
