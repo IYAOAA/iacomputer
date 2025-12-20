@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.ico">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I A Computer Academy | Services</title>
+  <title>I A Computer Academy</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0b0f14;
@@ -14,100 +19,250 @@
       --green: #39ff14;
       --text: #ffffff;
       --muted: #b5b5b5;
+      --border: rgba(57,255,20,0.15);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
+
+    /* ================= NAVBAR ================= */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid rgba(57,255,20,0.15);
+      padding: 1rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 15, 20, 0.9);
+      backdrop-filter: blur(6px);
+      z-index: 100;
     }
-    nav h1 { color: var(--green); font-size: 1.2rem; }
-    nav a {
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: 38px;
+    }
+
+    .brand h1 {
+      color: var(--green);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
       color: var(--text);
       text-decoration: none;
-      margin-left: 1rem;
+      margin-left: 1.2rem;
       font-size: 0.95rem;
     }
-    nav a:hover { color: var(--green); }
-    header {
-      padding: 3.5rem 1.5rem;
-      text-align: center;
-      background: radial-gradient(circle at top, #1a2233, var(--bg));
-    }
-    header h2 {
-      font-size: 2.4rem;
+
+    .nav-links a:hover {
       color: var(--green);
     }
-    header p {
-      margin-top: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--muted);
+
+    /* ================= HERO ================= */
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4.5rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      align-items: center;
     }
+
+    .hero h2 {
+      font-size: 2.7rem;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin-top: 1.2rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.85rem 1.8rem;
+      background: var(--green);
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(57,255,20,0.35);
+    }
+
+    .illustration {
+      background: radial-gradient(circle at top left, #1f293d, #0b0f14);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      font-size: 3.2rem;
+      text-align: center;
+    }
+
+    /* ================= FLOATING ================= */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* ================= SECTIONS ================= */
     section {
-      padding: 3rem 1.5rem;
       max-width: 1100px;
       margin: auto;
+      padding: 4rem 1.5rem;
     }
+
     .section-title {
-      font-size: 1.7rem;
-      color: var(--green);
-      margin-bottom: 1.5rem;
       text-align: center;
+      font-size: 1.8rem;
+      color: var(--green);
+      margin-bottom: 2.5rem;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 1.6rem;
     }
+
     .card {
       background: var(--card);
-      padding: 1.6rem;
-      border-radius: 14px;
-      border: 1px solid rgba(57,255,20,0.15);
+      padding: 1.9rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+    }
+
     .card h3 {
       color: var(--green);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
       font-size: 1.25rem;
     }
-    ul { list-style: none; }
-    ul li::before {
-      content: "•";
-      color: var(--green);
-      margin-right: 0.5rem;
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
+
+    .why ul {
+      list-style: none;
+    }
+
+    .why li {
+      margin-bottom: 0.6rem;
+    }
+
+    .why li::before {
+      content: "✓";
+      color: var(--green);
+      margin-right: 0.6rem;
+    }
+
+    /* ================= WHATSAPP ================= */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #000;
+      padding: 0.8rem 1.1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+
+    /* ================= FOOTER ================= */
     footer {
       text-align: center;
-      padding: 1.5rem;
-      color: var(--muted);
+      padding: 2rem;
       font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ================= SCROLL REVEAL ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .hero h2 {
+        font-size: 2.1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <a href="index.html" class="brand">
-  <img src="assets/logo.png" alt="I A Academy Logo">
-  <h1>I A Academy</h1>
-</a>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="training.html">Training</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <a href="index.html" class="brand">
+    <img src="assets/logo.png" alt="I A Academy Logo">
+    <h1>I A Academy</h1>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="training.html">Training</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 
   <header>
     <h2>Our Services</h2>
@@ -141,9 +296,28 @@
     </div>
   </section>
 
-  <footer>
-    © 2025 I A Computer Academy. All rights reserved.
-  </footer>
+ <footer>
+  © 2025 I A Computer Academy — Growing Skills, Building Futures.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/2348131999966" target="_blank">💬 WhatsApp Us</a>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < windowHeight - 80) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
 
 </body>
 </html>
