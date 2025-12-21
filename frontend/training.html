@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I A Computer Academy</title>
+  <title>Training Programmes | I A Computer Academy</title>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -12,238 +12,9 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #121822;
-      --green: #39ff14;
-      --text: #ffffff;
-      --muted: #b5b5b5;
-      --border: rgba(57,255,20,0.15);
-    }
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ================= NAVBAR ================= */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.8rem;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(11, 15, 20, 0.9);
-      backdrop-filter: blur(6px);
-      z-index: 100;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .brand img {
-      height: 38px;
-    }
-
-    .brand h1 {
-      color: var(--green);
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      margin-left: 1.2rem;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 4.5rem 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero h2 {
-      font-size: 2.7rem;
-      color: var(--green);
-      line-height: 1.2;
-    }
-
-    .hero p {
-      margin-top: 1.2rem;
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.85rem 1.8rem;
-      background: var(--green);
-      color: #000;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(57,255,20,0.35);
-    }
-
-    .illustration {
-      background: radial-gradient(circle at top left, #1f293d, #0b0f14);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 3rem;
-      font-size: 3.2rem;
-      text-align: center;
-    }
-
-    /* ================= FLOATING ================= */
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0); }
-    }
-
-    .float {
-      animation: float 5s ease-in-out infinite;
-    }
-
-    /* ================= SECTIONS ================= */
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 4rem 1.5rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      color: var(--green);
-      margin-bottom: 2.5rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.6rem;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 1.9rem;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
-    }
-
-    .card h3 {
-      color: var(--green);
-      margin-bottom: 0.7rem;
-      font-size: 1.25rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .why ul {
-      list-style: none;
-    }
-
-    .why li {
-      margin-bottom: 0.6rem;
-    }
-
-    .why li::before {
-      content: "✓";
-      color: var(--green);
-      margin-right: 0.6rem;
-    }
-
-    /* ================= WHATSAPP ================= */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #000;
-      padding: 0.8rem 1.1rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      z-index: 999;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    /* ================= SCROLL REVEAL ================= */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .hero h2 {
-        font-size: 2.1rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -263,83 +34,96 @@
   </div>
 </nav>
 
+<section class="reveal">
+  <h2 class="section-title">Training Programmes</h2>
+  <p class="section-intro">
+    Practical computer training designed for beginners, students,
+    and individuals who want real digital skills.
+  </p>
+</section>
 
- <section>
-    <h2 class="section-title">Digital Skills Training</h2>
+<section class="reveal">
+  <div class="grid">
+
     <div class="card">
-      <p>
-       Practical, hands-on computer training designed to build real-world digital skills.
-      </p>
+      <h3>🖥 Computer Appreciation</h3>
+      <p>Perfect for beginners with little or no computer knowledge.</p>
+      <ul>
+        <li>Basic computer operations</li>
+        <li>Keyboard & mouse skills</li>
+        <li>Introduction to the internet</li>
+      </ul>
     </div>
-  </section>
 
-  <section>
-    <h2 class="section-title">Our Training Programmes</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Professional Courses</h3>
-        <ul>
-          <li>Website Design Training</li>
-          <li>CorelDRAW (Graphics Design)</li>
-          <li>AutoCAD</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Office & Productivity Skills</h3>
-        <ul>
-          <li>Microsoft Word</li>
-          <li>Microsoft Excel</li>
-          <li>PowerPoint Basics</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Beginner Courses</h3>
-        <ul>
-          <li>Computer Appreciation</li>
-          <li>Basic Computer Operations</li>
-          <li>Internet & Email Skills</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>📄 Microsoft Word</h3>
+      <p>Learn professional document creation and formatting.</p>
+      <ul>
+        <li>Typing & formatting</li>
+        <li>Letters & reports</li>
+        <li>Practical office use</li>
+      </ul>
     </div>
-  </section>
 
-  <section>
-    <h2 class="section-title">Why Learn With Us?</h2>
-    <div class="grid">
-      <div class="card">
-        <ul>
-          <li>Small class sizes</li>
-          <li>Practical, hands-on training</li>
-          <li>Affordable fees</li>
-          <li>Beginner-friendly approach</li>
-          <li>Community-focused learning</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>📊 Microsoft Excel</h3>
+      <p>Understand spreadsheets and basic data handling.</p>
+      <ul>
+        <li>Tables & formulas</li>
+        <li>Simple calculations</li>
+        <li>Everyday business use</li>
+      </ul>
     </div>
-  </section>
 
- <footer>
-  © 2025 I A Computer Academy — Growing Skills, Building Futures.
+    <div class="card">
+      <h3>🎨 CorelDRAW</h3>
+      <p>Graphic design for beginners and small businesses.</p>
+      <ul>
+        <li>Flyers & banners</li>
+        <li>Business designs</li>
+        <li>Printing preparation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Website Design</h3>
+      <p>Learn the basics of creating modern websites.</p>
+      <ul>
+        <li>HTML & CSS basics</li>
+        <li>Website structure</li>
+        <li>Real project practice</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🏗 AutoCAD (Basics)</h3>
+      <p>Introduction to technical and architectural drawing.</p>
+      <ul>
+        <li>Basic tools</li>
+        <li>2D drawing</li>
+        <li>Practical exercises</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="cta-box reveal">
+    <h3>Interested in any course?</h3>
+    <p style="color: var(--muted);">
+      Visit our centre or contact us to register and learn more.
+    </p>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 I A Computer Academy — Empowering digital skills.
 </footer>
 
-<a class="whatsapp" href="https://wa.me/2348131999966" target="_blank">💬 WhatsApp Us</a>
-
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < windowHeight - 80) {
-        el.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-</script>
-
+<a class="whatsapp" href="https://wa.me/2348131999966" target="_blank">
+  💬 WhatsApp Us
+</a>
+<!-- Shared JS -->
+<script src="js/main.js"></script>
 </body>
 </html>
