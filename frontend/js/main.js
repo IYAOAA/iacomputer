@@ -22,3 +22,13 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+const watermark = document.querySelector(".hero-watermark");
+
+window.addEventListener("scroll", () => {
+  if (!watermark) return;
+
+  const scrollY = window.scrollY;
+  watermark.style.transform = `translateY(${scrollY * 0.2}px)`;
+});
+

@@ -258,3 +258,35 @@ footer {
   text-align: center;
   margin-top: 4rem;
 }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-watermark {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/logo.png") right / 280px no-repeat;
+  opacity: 0.03;
+  pointer-events: none;
+   animation: bgFloat 40s ease-in-out infinite;
+  filter: grayscale(100%);
+}
+
+@keyframes softFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
