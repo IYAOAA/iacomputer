@@ -32,3 +32,28 @@ window.addEventListener("scroll", () => {
   watermark.style.transform = `translateY(${scrollY * 0.2}px)`;
 });
 
+
+document.querySelectorAll('.mockup-wrapper').forEach(wrapper => {
+  const mockups = wrapper.querySelectorAll('.mockup');
+  let index = 0;
+  let interval;
+
+  const showMockup = i => {
+    mockups.forEach(m => m.classList.remove('active'));
+    mockups[i].classList.add('active');
+  };
+
+  const startCycle = () => {
+    interval = setInterval(() => {
+      index = (index + 1) % mockups.length;
+      showMockup(index);
+    }, 3000);
+  };
+
+  const stopCycle = () => clearInterval(interval);
+
+  wrapper.addEventListener('mouseenter', stopCycle);
+  wrapper.addEventListener('mouseleave', startCycle);
+
+  startCycle();
+});

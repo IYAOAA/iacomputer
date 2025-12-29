@@ -267,7 +267,7 @@ footer {
 .hero-watermark {
   position: fixed;
   inset: 0;
-  background: url("../assets/logo.png") center / 180px no-repeat;
+  background: url("../assets/logo.png") center / 280px no-repeat;
   opacity: 0.05;
   pointer-events: none;
     animation: softFloat 10s ease-in-out infinite;
@@ -304,4 +304,315 @@ footer {
   100% {
     transform: translateY(0);
   }
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+
+}
+
+.training-content {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 3rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.training-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.training-content li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  color: #d9d9d9;
+}
+
+.training-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ff66;
+  font-weight: bold;
+}
+
+.section-title {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 6px;
+  background: #00ff66;
+  border-radius: 10px;
+}
+
+.training-cta {
+  margin: 4rem auto 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 102, 0.12),
+    rgba(0, 255, 102, 0.03)
+  );
+  border: 1px solid rgba(0, 255, 102, 0.25);
+}
+
+.training-cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  color: #000;
+  background: #00ff66;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-cta a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 255, 102, 0.4);
+}
+
+body {
+  letter-spacing: 0.3px;
+}
+
+.training-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0,255,102,0.04), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.glass {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.page-title {
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 40px;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  color: #c8ffe0;
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.meta-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 255, 102, 0.15);
+}
+
+.training-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  position: relative;
+}
+
+.info-block {
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.info-title {
+  color: var(--green);
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+}
+
+.info-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-block li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  color: var(--muted);
+}
+
+.info-block li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 0.8rem;
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.build-card {
+  padding: 26px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.build-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.build-card h4 {
+  color: var(--green);
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.build-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   MOCKUP PREVIEW (CLEAN VERSION)
+================================ */
+
+.mockup-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+
+  animation: floatSoft 7s ease-in-out infinite;
+}
+
+/* STACK CONTAINER */
+.mockup-stack {
+  position: relative;
+  width: 100%;
+  height: 420px; /* IMPORTANT: gives images space */
+}
+
+/* INDIVIDUAL MOCKUPS */
+.mockup {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  filter: blur(6px) brightness(0.9);
+  transform: scale(1.04);
+
+  transition:
+    opacity 0.8s ease,
+    filter 0.6s ease,
+    transform 0.6s ease;
+}
+
+.mockup.active {
+  opacity: 1;
+}
+
+/* HOVER POLISH */
+.mockup-wrapper:hover .mockup.active {
+  filter: blur(2px) brightness(1);
+  transform: scale(1.07);
+}
+
+/* LABEL */
+.mockup-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,0.6);
+  color: #c8ffe0;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.mockup-wrapper:hover .mockup-label {
+  transform: translateX(-50%) translateY(-3px);
+  background: rgba(0,0,0,0.7);
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatSoft {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
