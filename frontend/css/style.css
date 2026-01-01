@@ -616,3 +616,42 @@ body {
   50%  { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
+
+/* MOCKUP CARDS */
+.mockup-card h4 {
+  margin-top: 1rem;
+  color: var(--green);
+  font-size: 1.1rem;
+}
+
+.mockup-wrapper {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.mockup-blur {
+  width: 100%;
+  display: block;
+  filter: blur(6px) brightness(0.9);
+  transform: scale(1.04);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.mockup-wrapper:hover .mockup-blur {
+  filter: blur(1.5px) brightness(1);
+  transform: scale(1.08);
+}
+
+.mockup-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #c8ffe0;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
