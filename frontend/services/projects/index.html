@@ -103,3 +103,29 @@
 <script src="../../js/main.js"></script>
 </body>
 </html>
+<script>
+  const MAINTENANCE_MODE = true;
+
+  if (MAINTENANCE_MODE) {
+    document.body.innerHTML = `
+      <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: sans-serif;
+          background: #111;
+          color: #fff;
+          text-align: center;
+        }
+      </style>
+      <div>
+        <h1>🚧 Site Under Maintenance</h1>
+        <p>We’ll be live shortly.</p>
+         <div class="hero-watermark"></div>
+      </div>
+    `;
+  }
+</script>
