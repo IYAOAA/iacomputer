@@ -655,3 +655,60 @@ body {
   border-radius: 999px;
   backdrop-filter: blur(6px);
 }
+.journey {
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.journey-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 32px 26px;
+  text-align: left;
+  position: relative;
+  animation: floatSoft 8s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+}
+
+.journey-step {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.journey-card h3 {
+  margin: 12px 0 8px;
+  font-size: 1.1rem;
+}
+
+.journey-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Final highlight */
+.journey-card.highlight {
+  border-color: rgba(120,255,200,0.4);
+  background: linear-gradient(
+    160deg,
+    rgba(120,255,200,0.18),
+    rgba(255,255,255,0.05)
+  );
+}
