@@ -52,18 +52,31 @@
   <div class="grid">
 
     <div class="card project-card">
-      <h3>Design and Implementation of an Online Voting System</h3>
-      <p class="project-meta">
-        📚 Computer Science · 🎓 ND/HND
-      </p>
-      <p>
-        A web-based voting system focused on transparency,
-        security, and ease of access.
-      </p>
-      <a href="project-online-voting.html" class="card-link">
-        View Project Preview →
-      </a>
-    </div>
+
+  <div class="project-badges">
+    <span class="badge dept">Computer Science</span>
+    <span class="badge level">ND / HND</span>
+    <span class="badge difficulty">Beginner</span>
+  </div>
+
+  <h3>Online Voting System</h3>
+
+  <p class="project-summary">
+    Design and implementation of a secure web-based voting system
+    that improves transparency and accessibility.
+  </p>
+
+  <p class="project-learn">
+    <strong>You’ll learn:</strong> system design, user authentication,
+    basic database logic.
+  </p>
+
+  <a href="online-voting-system.html" class="card-link">
+    Preview Project →
+  </a>
+
+</div>
+
 
     <div class="card project-card">
       <h3>Development of a School Management Portal</h3>
@@ -103,29 +116,157 @@
 <script src="../../js/main.js"></script>
 </body>
 </html>
+
 <script>
-  const MAINTENANCE_MODE = true;
+  const MAINTENANCE_MODE = false;
+
+  // 🔧 CONFIG
+  const launchDate = new Date("2026-02-01T00:00:00").getTime();
+  const LOGO_SRC = "../../assets/logo.png"; // your logo path
 
   if (MAINTENANCE_MODE) {
     document.body.innerHTML = `
       <style>
+        :root {
+          --bg: #0b0f14;
+          --card: #121822;
+          --green: #39ff14;
+          --text: #ffffff;
+          --muted: #c4c4c4;
+          --border: rgba(57,255,20,0.15);
+        }
+
         body {
           margin: 0;
           height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-family: sans-serif;
-          background: #111;
-          color: #fff;
+          background: var(--bg);
+          color: var(--text);
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .box {
+          background: var(--card);
+          padding: 44px 36px;
+          border-radius: 18px;
+          max-width: 480px;
+          width: 90%;
           text-align: center;
+          border: 1px solid var(--border);
+          box-shadow: 0 0 40px rgba(57,255,20,0.08);
+        }
+
+        .logo {
+          max-width: 90px;
+          margin-bottom: 18px;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+        }
+
+        .accent {
+          color: var(--green);
+        }
+
+        p {
+          color: var(--muted);
+          line-height: 1.6;
+          margin-bottom: 28px;
+        }
+
+        .countdown {
+          display: flex;
+          justify-content: center;
+          gap: 14px;
+        }
+
+        .time {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid var(--border);
+          padding: 14px 16px;
+          border-radius: 12px;
+          min-width: 72px;
+        }
+
+        .time span {
+          display: block;
+          font-size: 1.9rem;
+          font-weight: 700;
+          color: var(--green);
+        }
+
+        .label {
+          font-size: 0.7rem;
+          letter-spacing: 1px;
+          margin-top: 4px;
+          color: var(--muted);
+        }
+
+        .small {
+          margin-top: 24px;
+          font-size: 0.8rem;
+          color: var(--muted);
+          opacity: 0.7;
         }
       </style>
-      <div>
-        <h1>🚧 Site Under Maintenance</h1>
-        <p>We’ll be live shortly.</p>
-         <div class="hero-watermark"></div>
+
+      <div class="box">
+        <img src="${LOGO_SRC}" alt="Academy Logo" class="logo" />
+<div class="hero-watermark"></div>
+        <h1>Coming <span class="accent">Soon</span></h1>
+        <p>
+          This section is under maintenance.<br />
+          We’re building something purposeful.
+        </p>
+
+        <div class="countdown">
+          <div class="time">
+            <span id="days">00</span>
+            <div class="label">DAYS</div>
+          </div>
+          <div class="time">
+            <span id="hours">00</span>
+            <div class="label">HOURS</div>
+          </div>
+          <div class="time">
+            <span id="minutes">00</span>
+            <div class="label">MINUTES</div>
+          </div>
+          <div class="time">
+            <span id="seconds">00</span>
+            <div class="label">SECONDS</div>
+          </div>
+        </div>
+
+        <div class="small">
+          © 2025 I A Computer Academy
+        </div>
       </div>
     `;
+
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector(".countdown").innerHTML =
+          "<strong class='accent'>We are live 🚀</strong>";
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").textContent =
+        Math.floor((distance / (1000 * 60 * 60)) % 24).toString().padStart(2, "0");
+      document.getElementById("minutes").textContent =
+        Math.floor((distance / (1000 * 60)) % 60).toString().padStart(2, "0");
+      document.getElementById("seconds").textContent =
+        Math.floor((distance / 1000) % 60).toString().padStart(2, "0");
+    }, 1000);
   }
 </script>
