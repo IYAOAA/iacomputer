@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Printing Services Market – Advanced Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f6f7f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { margin-bottom: 6px; }
+    .sub { color: #555; margin-bottom: 20px; }
+
+    .market {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .provider {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.08);
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #2f6df6;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 4px;
+    }
+
+    .inline {
+      display: flex;
+      gap: 8px;
+    }
+
+    .price {
+      margin-top: 12px;
+      background: #f1f5ff;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #2f6df6;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Printing Services Market</h1>
+  <div class="sub">Automatic pricing by size, inches, quantity tiers & quality. Compare providers instantly.</div>
+
+  <div class="market">
+
+    <!-- PROVIDER -->
+    <div class="provider" data-provider="alpha">
+      <div class="badge">Best Price</div>
+      <h3>Alpha Prints</h3>
+
+      <label>Service Type</label>
+      <select class="service">
+        <option value="flyer">Flyer / Sticker</option>
+        <option value="banner">Banner</option>
+        <option value="billboard">Billboard</option>
+      </select>
+
+      <label>Size</label>
+      <select class="size">
+        <option value="A4">A4</option>
+        <option value="A3">A3</option>
+      </select>
+
+      <div class="inline dimension" style="display:none">
+        <input type="number" class="width" placeholder="Width (ft)" />
+        <input type="number" class="height" placeholder="Height (ft)" />
+      </div>
+
+      <label>Quality</label>
+      <select class="quality">
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" class="qty" value="100" min="1" />
+
+      <div class="price">Total: ₦<span class="total">0</span></div>
+      <button class="btn">Contact Provider</button>
+    </div>
+
+    <!-- PROVIDER -->
+    <div class="provider" data-provider="beta">
+      <div class="badge">Best Price</div>
+      <h3>Beta Graphics</h3>
+
+      <label>Service Type</label>
+      <select class="service">
+        <option value="flyer">Flyer / Sticker</option>
+        <option value="banner">Banner</option>
+        <option value="billboard">Billboard</option>
+      </select>
+
+      <label>Size</label>
+      <select class="size">
+        <option value="A4">A4</option>
+        <option value="A3">A3</option>
+      </select>
+
+      <div class="inline dimension" style="display:none">
+        <input type="number" class="width" placeholder="Width (ft)" />
+        <input type="number" class="height" placeholder="Height (ft)" />
+      </div>
+
+      <label>Quality</label>
+      <select class="quality">
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" class="qty" value="100" min="1" />
+
+      <div class="price">Total: ₦<span class="total">0</span></div>
+      <button class="btn">Contact Provider</button>
+    </div>
+
+  </div>
+
+  <script>
+    const providers = {
+      alpha: {
+        flyer: {
+          A4: [
+            { max: 100, price: 40 },
+            { max: 500, price: 35 },
+            { max: Infinity, price: 30 }
+          ],
+          A3: [
+            { max: 100, price: 70 },
+            { max: Infinity, price: 60 }
+          ]
+        },
+        banner: { pricePerSqFt: 2500 },
+        billboard: { pricePerSqFt: 5000 },
+        quality: { standard: 1, premium: 1.3 }
+      },
+      beta: {
+        flyer: {
+          A4: [
+            { max: 100, price: 38 },
+            { max: 500, price: 33 },
+            { max: Infinity, price: 28 }
+          ],
+          A3: [
+            { max: 100, price: 65 },
+            { max: Infinity, price: 55 }
+          ]
+        },
+        banner: { pricePerSqFt: 2700 },
+        billboard: { pricePerSqFt: 5200 },
+        quality: { standard: 1, premium: 1.25 }
+      }
+    };
+
+    function tierPrice(tiers, qty) {
+      return tiers.find(t => qty <= t.max).price;
+    }
+
+    function calculateAll() {
+      let lowest = Infinity;
+      let cheapestCard = null;
+
+      document.querySelectorAll('.provider').forEach(card => {
+        const p = providers[card.dataset.provider];
+        const service = card.querySelector('.service').value;
+        const size = card.querySelector('.size').value;
+        const quality = card.querySelector('.quality').value;
+        const qty = parseInt(card.querySelector('.qty').value || 0);
+        const width = parseFloat(card.querySelector('.width').value || 0);
+        const height = parseFloat(card.querySelector('.height').value || 0);
+
+        let total = 0;
+
+        if (service === 'flyer') {
+          const unit = tierPrice(p.flyer[size], qty);
+          total = unit * qty;
+        } else {
+          const area = width * height;
+          if (area > 0) {
+            total = area * p[service].pricePerSqFt * p.quality[quality] * qty;
+          }
+        }
+
+        card.querySelector('.dimension').style.display = service === 'flyer' ? 'none' : 'flex';
+        card.querySelector('.size').style.display = service === 'flyer' ? 'block' : 'none';
+
+        card.querySelector('.total').textContent = total ? total.toLocaleString() : '0';
+        card.querySelector('.badge').style.display = 'none';
+
+        if (total && total < lowest) {
+          lowest = total;
+          cheapestCard = card;
+        }
+      });
+
+      if (cheapestCard) {
+        cheapestCard.querySelector('.badge').style.display = 'block';
+      }
+    }
+
+    document.querySelectorAll('.provider').forEach(card => {
+      card.addEventListener('input', calculateAll);
+    });
+
+    calculateAll();
+  </script>
+
+</body>
+</html>
+
+<!-- ================= PROVIDER SETUP PAGE ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Provider Setup – Pricing Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { margin-bottom: 6px; }
+    .sub { color: #555; margin-bottom: 20px; }
+
+    .panel {
+      background: #fff;
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.08);
+      max-width: 520px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      margin-top: 16px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #2f6df6;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 18px;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Service Provider Pricing Setup</h1>
+  <div class="sub">Set your prices once. Calculator updates automatically.</div>
+
+  <div class="panel">
+
+    <label>Provider Name</label>
+    <input id="name" placeholder="e.g Alpha Prints" />
+
+    <label>Service Type</label>
+    <select id="service">
+      <option value="flyer">Flyer / Sticker</option>
+      <option value="banner">Banner</option>
+      <option value="billboard">Billboard</option>
+    </select>
+
+    <label>Size (for flyers)</label>
+    <select id="size">
+      <option value="A4">A4</option>
+      <option value="A3">A3</option>
+    </select>
+
+    <label>Quantity Range</label>
+    <div class="row">
+      <input id="min" type="number" placeholder="Min" />
+      <input id="max" type="number" placeholder="Max" />
+    </div>
+
+    <label>Price per Unit / Sq Ft (₦)</label>
+    <input id="price" type="number" />
+
+    <label>Premium Quality Multiplier</label>
+    <input id="multiplier" type="number" step="0.1" value="1.3" />
+
+    <button class="btn" onclick="generate()">Generate Pricing Config</button>
+
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    function generate() {
+      const config = {
+        provider: name.value,
+        service: service.value,
+        size: size.value,
+        range: {
+          min: min.value || 1,
+          max: max.value || 'Infinity'
+        },
+        price: price.value,
+        premiumMultiplier: multiplier.value
+      };
+
+      output.textContent = JSON.stringify(config, null, 2);
+    }
+  </script>
+
+</body>
+</html>
