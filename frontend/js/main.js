@@ -57,3 +57,40 @@ document.querySelectorAll('.mockup-wrapper').forEach(wrapper => {
 
   startCycle();
 });
+
+// REGISTRATION FORM HANDLER
+const form = document.getElementById('registrationForm');
+
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+
+    let handler = PaystackPop.setup({
+      key: 'YOUR_PUBLIC_KEY_HERE',
+      email: email,
+      amount: 500000,
+      currency: "NGN",
+
+      metadata: {
+        custom_fields: [
+          { display_name: "Full Name", value: name },
+          { display_name: "Phone", value: phone }
+        ]
+      },
+
+      callback: function(response) {
+        alert('Payment successful! Ref: ' + response.reference);
+      },
+
+      onClose: function() {
+        alert('Transaction cancelled');
+      }
+    });
+
+    handler.openIframe();
+  });
+}

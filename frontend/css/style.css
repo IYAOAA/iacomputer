@@ -3,7 +3,7 @@
 :root {
   --bg: #0b0f14;
   --card: #121822;
-  --green: #39ff14;
+  --green: #2ee012;
   --text: #ffffff;
   --muted: #c4c4c4;
   --border: rgba(57,255,20,0.15);
@@ -144,15 +144,16 @@ nav {
 /* SECTIONS */
 section {
   max-width: 1100px;
-  margin: auto;
-  padding: 4rem 1.5rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
 }
 
 .section-title {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--green);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
 }
 
 .grid {
@@ -163,15 +164,15 @@ section {
 
 .card {
   background: var(--card);
-  padding: 1.9rem;
-  border-radius: 16px;
+  padding: 2.2rem;
+  border-radius: 14px;
   border: 1px solid var(--border);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
 .card h3 {
@@ -247,7 +248,9 @@ footer {
   color: var(--muted);
   max-width: 650px;
   margin: 0 auto 3rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.85;
 }
 
 .cta-box {
@@ -416,12 +419,12 @@ body {
   z-index: 0;
 }
 .glass {
-  animation: floatSoft 6s ease-in-out infinite;
+  animation: floatSoft 12s ease-in-out infinite;
 }
 
 @keyframes floatSoft {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
 }
 
 .page-title {
@@ -1023,4 +1026,92 @@ body {
   font-family: "Poppins", "Segoe UI", sans-serif;
 }
 
+.form-grid {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
+}
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+.form-section {
+  grid-column: span 2;
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 15px;
+  background: #0a84ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+nav {
+  padding: 1.2rem 2rem;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 3rem 1.2rem;
+  }
+
+  section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+}
+
+body {
+  letter-spacing: 0.2px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
