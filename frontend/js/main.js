@@ -1,5 +1,10 @@
 const reveals = document.querySelectorAll(".reveal");
+const params = new URLSearchParams(window.location.search);
+const course = params.get('course');
 
+if (course) {
+  document.getElementById('course').value = course;
+}
 function revealOnScroll() {
   const windowHeight = window.innerHeight;
 
