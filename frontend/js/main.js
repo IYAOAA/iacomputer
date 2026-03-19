@@ -2,6 +2,8 @@ const reveals = document.querySelectorAll(".reveal");
 const params = new URLSearchParams(window.location.search);
 const course = params.get('course');
 
+
+let selectedCourse = courseData[selectedCourseKey];
 if (course) {
   document.getElementById('course').value = course;
 }
@@ -98,4 +100,32 @@ if (form) {
 
     handler.openIframe();
   });
+}
+
+// COURSE + PRICE CONFIG
+const courseData = {
+  "website-design": {
+    name: "Website Design Training",
+    price: 500000 // ₦5,000 (kobo)
+  },
+  "graphics": {
+    name: "Graphics Design",
+    price: 400000
+  },
+  "data-analysis": {
+    name: "Data Analysis",
+    price: 600000
+  }
+};
+
+let amount = 500000; // default fallback
+
+if (selectedCourse) {
+  const courseSelect = document.getElementById('course');
+
+  if (courseSelect) {
+    courseSelect.value = selectedCourse.name;
+  }
+
+  amount = selectedCourse.price;
 }
