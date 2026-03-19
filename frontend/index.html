@@ -3,50 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IACC Network</title>
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="favicon5.png">
+  <title>IACC Network | I A Computer Academy</title>
+
+  <!-- Favicon (clean version) -->
   <link rel="icon" href="/favicon5.png" type="image/png">
-  <link rel="shortcut icon" href="/favicon5.png">
 
-  <meta name="description" content="I A Computer Academy offers practical computer training, web design, graphics design, and digital skills development for students and professionals in Nigeria.">
+  <!-- SEO -->
+  <meta name="description" content="IACC Network is a digital platform for technology education and services. Our division, I A Computer Academy, provides practical computer training and digital skills in Nigeria.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IACC Network">
+  <meta property="og:description" content="Digital skills training and technology services platform.">
+  <meta property="og:image" content="https://iaccnetwork.com/assets/logo5.png">
+  <meta property="og:url" content="https://iaccnetwork.com">
+
+  <!-- PURPOSE -->
   <meta name="purpose" content="وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ — Qur’an 11:88">
- 
-<!--
-وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ۚ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ
-(Qur’an 11:88)
- My success is only by Allah. Upon Him I rely, and to Him I return.
--->
 
-  <!-- Shared CSS -->
+  <!-- =========================
+       STRUCTURED DATA (KEY PART)
+  ========================== -->
+
+  <!-- Parent Brand -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IACC Network",
+    "url": "https://iaccnetwork.com",
+    "logo": "https://iaccnetwork.com/assets/logo5.png"
+  }
+  </script>
+
+  <!-- Sub Brand (Academy) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "I A Computer Academy",
+    "url": "https://iaccnetwork.com",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "IACC Network"
+    },
+    "description": "Practical digital skills training including web design, graphics, and computer literacy.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "No 4, Round About Plaza, Opp. Suleja Garage",
+      "addressLocality": "Suleja",
+      "addressRegion": "Niger State",
+      "addressCountry": "Nigeria"
+    }
+  }
+  </script>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
-
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "EducationalOrganization",
- "name": "I A Computer Academy",
- "url": "https://iaccnetwork.com",
- "logo": "https://iaccnetwork.com/favicon5.png",
- "description": "I A Computer Academy provides practical digital skills training including programming, graphics design, web development and computer literacy.",
- "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "No 4, Round About Plaza, Opp. Suleja Garage, Suleja Niger State",
-   "addressCountry": "Nigeria"
- }
-</script>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="index.html" class="brand">
-    <img src="assets/logo5.png" alt="I A Academy Logo">
-    <h1>I A Computer Academy</h1>
+    <img src="assets/logo5.png" alt="IACC Network Logo">
+    <div>
+      <h1>IACC Network</h1>
+      <small style="color:#aaa;">I A Computer Academy</small>
+    </div>
   </a>
 
-   <div class="nav-links">
+  <div class="nav-links">
     <a href="index.html" data-page="index">Home</a>
     <a href="services.html" data-page="services">Services</a>
     <a href="training.html" data-page="training">Training</a>
@@ -55,58 +83,61 @@
   </div>
 </nav>
 
-<div 
-class="hero">
+<!-- HERO -->
+<div class="hero">
   <div class="hero-watermark"></div>
+
   <div class="reveal">
-    <h2>Digital Skills & Computer Training Academy</h2>
+    <h2>Digital Skills & Computer Training</h2>
     <p>
-    Practical computer training and reliable cyber services for students,
-    individuals, and businesses in Nigeria.
+      IACC Network provides technology education and services.
+      Our training division, <strong>I A Computer Academy</strong>,
+      delivers practical digital skills for students and professionals.
     </p>
     <a class="cta" href="contact.html">Visit or Contact Us</a>
   </div>
 
-  <div class="illustration float reveal">💻🎓</div>
+  <div class="illustration reveal">💻🎓</div>
 </div>
 
+<!-- SERVICES -->
 <section class="reveal">
   <h2 class="section-title">Our Services</h2>
   <div class="grid">
+
     <div class="card">
       <h3>🖨 Cyber & Office Services</h3>
-      <p>Printing, Binding, Laminating, Typing, Assignments, School Projects, Payslips.</p>
-    <a href="services/projects/index.html" class="card-link">
-    School Projects →
-  </a>
-   </div>
+      <p>Printing, binding, laminating, assignments, school projects, and more.</p>
+      <a href="services/projects/index.html" class="card-link">School Projects →</a>
+    </div>
 
     <div class="card">
       <h3>🌐 Digital Solutions</h3>
-      <p>Website Design, Online Registrations, Document Formatting, Tech Support.</p>
-   <a href="services/website-design.html" class="card-link">
-    Website Design →
-  </a>
+      <p>Website design, online registrations, document formatting, and tech support.</p>
+      <a href="services/website-design.html" class="card-link">Website Design →</a>
     </div>
+
   </div>
 </section>
 
+<!-- TRAINING -->
 <section class="reveal">
   <h2 class="section-title">Training Programmes</h2>
+
   <div class="grid">
     <div class="card">
-  <h3>🎓 Professional Skills</h3>
-  <p>Website Design, CorelDRAW, AutoCAD.</p>
-
-  <a href="training/training-web-design.html" class="card-link">
-    Website Design Training →
-  </a>
-</div>
+      <h3>🎓 Professional Skills</h3>
+      <p>Website Design, CorelDRAW, AutoCAD.</p>
+      <a href="training/training-web-design.html" class="card-link">
+        Website Design Training →
+      </a>
+    </div>
 
     <div class="card">
       <h3>📊 Office Skills</h3>
       <p>Microsoft Word, Excel, PowerPoint.</p>
     </div>
+
     <div class="card">
       <h3>🖥 Beginner Courses</h3>
       <p>Computer Appreciation, Internet & Email.</p>
@@ -114,27 +145,27 @@ class="hero">
   </div>
 </section>
 
+<!-- WHY -->
 <section class="why reveal">
-  <h2 class="section-title">Why Choose I A Computer Academy?</h2>
+  <h2 class="section-title">Why Choose Us?</h2>
+
   <div class="card">
     <ul>
-      <li>Community-focused and beginner-friendly</li>
-      <li>We explain things simply — no tech confusion</li>
-      <li>We teach by doing, not just talking</li>
-      <li>We care more about understanding than speed</li>
-      <li>We build skills you can actually use</li>
-      <li>Reliable everyday digital services</li>
+      <li>Beginner-friendly training</li>
+      <li>Simple and practical teaching approach</li>
+      <li>Hands-on learning experience</li>
+      <li>Real-world digital skills</li>
+      <li>Reliable everyday services</li>
     </ul>
   </div>
-  
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2025 I A Computer Academy — Growing Skills, Building Futures.
+  © 2025 IACC Network — I A Computer Academy Division.
 </footer>
 
-
-<!-- Shared JS -->
 <script src="js/main.js"></script>
+
 </body>
 </html>
