@@ -157,3 +157,14 @@ if (form) {
     handler.openIframe();
   });
 }
+
+  function closeEidPopup() {
+    document.getElementById("eid-popup").style.display = "none";
+    localStorage.setItem("eidSeen", "true");
+  }
+
+  window.addEventListener("load", () => {
+    if (localStorage.getItem("eidSeen")) {
+      document.getElementById("eid-popup").style.display = "none";
+    }
+  });
