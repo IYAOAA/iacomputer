@@ -22,6 +22,33 @@ let amount = 500000; // default fallback
 // RUN AFTER PAGE LOAD
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (toggle && navLinks) {
+
+  // Toggle menu
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle("active");
+  });
+
+  // Prevent clicks inside menu from closing it
+  navLinks.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Click anywhere else → close
+  document.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+
+  // Close on scroll
+  window.addEventListener("scroll", () => {
+    navLinks.classList.remove("active");
+  });
+
+}
 
   // ===============================
   // COURSE DETECTION FROM URL
@@ -158,13 +185,6 @@ if (form) {
   });
 }
 
-  function closeEidPopup() {
-    document.getElementById("eid-popup").style.display = "none";
-    localStorage.setItem("eidSeen", "true");
-  }
+  
 
-  window.addEventListener("load", () => {
-    if (localStorage.getItem("eidSeen")) {
-      document.getElementById("eid-popup").style.display = "none";
-    }
-  });
+ 

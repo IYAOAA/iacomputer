@@ -7,7 +7,7 @@
   <title>IACC Network | I A Computer Academy</title>
 
   <!-- Favicon (clean version) -->
-  <link rel="icon" href="/favicon5.png" type="image/png">
+ <link rel="icon" type="image/png" href="favicon5.png">
 
   <!-- SEO -->
   <meta name="description" content="IACC Network is a digital platform for technology education and services. Our division, I A Computer Academy, provides practical computer training and digital skills in Nigeria.">
@@ -70,9 +70,27 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener("click", function () {
+        gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: 'WhatsApp Button',
+          value: 1
+        });
+      });
+    }
+  });
+</script>
+
 </head>
 
 <body>
+
 
 <!-- NAV -->
 <nav>
@@ -84,7 +102,12 @@
     </div>
   </a>
 
-  <div class="nav-links">
+  <!-- Hamburger button -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <div class="nav-links" id="nav-links">
     <a href="index.html" data-page="index">Home</a>
     <a href="services.html" data-page="services">Services</a>
     <a href="training.html" data-page="training">Training</a>
@@ -92,24 +115,6 @@
     <a href="contact.html" data-page="contact">Contact</a>
   </div>
 </nav>
-
-<div id="eid-popup" class="eid-popup">
-  <div class="eid-box">
-    <div class="eid-glow"></div>
-
-    <h1>🌙 Eid Mubarak</h1>
-
-    <p class="eid-message">
-      May this blessed season bring you peace, success, and new opportunities.
-    </p>
-
-    <p class="eid-brand">
-      — IACC | Digital Skills & Computer Training
-    </p>
-
-    <button onclick="closeEidPopup()">Enter Platform →</button>
-  </div>
-</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -122,11 +127,37 @@
       Our training division, <strong>I A Computer Academy</strong>,
       delivers practical digital skills for students and professionals.
     </p>
-    <a class="cta" href="contact.html">Visit or Contact Us</a>
-  </div>
 
+    <p>
+  Learn practical skills like <strong>Web Design, Microsoft Office, and Graphic Design</strong>.
+  Join <strong>I A Computer Academy</strong> and start building real-world tech skills today.
+  
+  </p>
+    <a class="cta" href="about.html">Learn More About Us</a>
+  </div>
   <div class="illustration reveal">💻🎓</div>
 </div>
+
+<section class="reveal">
+  <div class="grid">
+
+    <div class="card">
+      <h3>✔ Practical Training</h3>
+      <p>Learn by doing with real-world projects.</p>
+    </div>
+
+    <div class="card">
+      <h3>✔ Beginner Friendly</h3>
+      <p>We start from zero — no experience needed.</p>
+    </div>
+
+    <div class="card">
+      <h3>✔ Located in Suleja</h3>
+      <p>Accessible and community-focused training center.</p>
+    </div>
+
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section class="reveal">
@@ -150,12 +181,12 @@
 
 <!-- TRAINING -->
 <section class="reveal">
-  <h2 class="section-title">Training Programmes</h2>
+  <h2 class="section-title">Training & Courses</h2>
 
   <div class="grid">
     <div class="card">
       <h3>🎓 Professional Skills</h3>
-      <p>Website Design, CorelDRAW, AutoCAD.</p>
+      <p>Web Design, CorelDRAW, AutoCAD — build professional skills.</p>
       <a href="training/training-web-design.html" class="card-link">
         Website Design Training →
       </a>
@@ -163,36 +194,64 @@
 
     <div class="card">
       <h3>📊 Office Skills</h3>
-      <p>Microsoft Word, Excel, PowerPoint.</p>
+      <p>Master Word, Excel, and PowerPoint for office productivity.</p>
     </div>
 
     <div class="card">
       <h3>🖥 Beginner Courses</h3>
-      <p>Computer Appreciation, Internet & Email.</p>
+      <p>Start from basics: computer use, internet, and email.</p>
     </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Home Training (Suleja & Abuja)</h2>
+
+  <div class="card">
+    <p>
+      For individuals and groups within <strong>Suleja, Abuja, and nearby areas</strong>,
+      we offer flexible home-based training sessions.
+    </p>
+
+    <p>
+      This option is ideal for learners who prefer personalized guidance
+      or cannot attend physical classes regularly.
+    </p>
+
+    <ul>
+      <li>One-on-one or small group sessions</li>
+      <li>Flexible scheduling</li>
+      <li>Beginner-friendly approach</li>
+      <li>Available for selected courses</li>
+    </ul>
+
+    <a class="cta" href="training/home-training.html">Home Training</a>
   </div>
 </section>
 
 <!-- WHY -->
 <section class="why reveal">
-  <h2 class="section-title">Why Choose Us?</h2>
+  <h2 class="section-title">Why Choose I A Computer Academy?</h2>
 
   <div class="card">
     <ul>
-      <li>Beginner-friendly training</li>
-      <li>Simple and practical teaching approach</li>
-      <li>Hands-on learning experience</li>
-      <li>Real-world digital skills</li>
-      <li>Reliable everyday services</li>
+      <li>Beginner-friendly and accessible learning environment</li>
+      <li>Clear and practical teaching approach</li>
+      <li>Focus on real-world digital skills</li>
+      <li>Structured and progressive training</li>
+      <li>Commitment to student understanding</li>
     </ul>
   </div>
 </section>
 
+
+
 <!-- FOOTER -->
 <footer>
-  © 2025 IACC Network — I A Computer Academy Division.
+  © 2025 IACC Network  
+Digital Skills • Technology • Education-  
+I A Computer Academy Division
 </footer>
-
 <script src="js/main.js"></script>
 
 </body>

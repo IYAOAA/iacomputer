@@ -1147,60 +1147,61 @@ h1, h2, h3 {
   to { transform: translateY(35px); }
 }
 
-.eid-box {
-  position: relative;
-  text-align: center;
-  padding: 50px 30px;
-  border-radius: 20px;
-  background: rgba(2, 6, 23, 0.85);
-  border: 1px solid rgba(0,255,170,0.2);
-  box-shadow: 0 0 60px rgba(0,255,170,0.15);
-  backdrop-filter: blur(12px);
-  max-width: 400px;
-  width: 90%;
-}
-
-.eid-glow {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(57,255,20,0.35), transparent 70%);
-  filter: blur(30px);
-}
-
-.eid-box h1 {
-  color: #25D366;
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.eid-message {
-  color: #cbd5f5;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-}
-
-.eid-brand {
-  color: #25D366;
-  font-size: 0.85rem;
-  margin-bottom: 20px;
-  opacity: 0.8;
-}
-
-.eid-box button {
-  padding: 12px 20px;
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   background: #25D366;
-  color: #020617;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  z-index: 999;
   transition: 0.3s;
 }
 
-.eid-box button:hover {
-  background:  #25D366
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Default (desktop) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
