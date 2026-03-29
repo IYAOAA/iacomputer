@@ -1205,3 +1205,25 @@ nav {
     display: flex;
   }
 }
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px;
+  background: #00ff88;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
