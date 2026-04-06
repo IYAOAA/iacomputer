@@ -22,6 +22,33 @@ let amount = 500000; // default fallback
 // RUN AFTER PAGE LOAD
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
+
+  const contactForm = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+if (contactForm && status) {
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    fetch("/", {
+      method: "POST",
+      body: formData
+    })
+    .then(() => {
+      status.style.display = "block";
+      status.innerHTML = "🎉 Thanks! Your message has been sent. I'll get back to you soon.";
+      contactForm.reset();
+    })
+    .catch(() => {
+      status.style.display = "block";
+      status.innerText = "❌ Something went wrong. Try again.";
+    });
+  });
+}
+
+
   const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
