@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>IACC Network | Eid Website Promo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#041109;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
+
+.bg-glow{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.18;
+}
+
+.glow1{
+  width:420px;
+  height:420px;
+  background:#22c55e;
+  top:-100px;
+  left:-120px;
+}
+
+.glow2{
+  width:420px;
+  height:420px;
+  background:gold;
+  bottom:-100px;
+  right:-120px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 8%;
+
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:30px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#84cc16;
+}
+
+.nav-btn{
+  text-decoration:none;
+  background:linear-gradient(135deg,#84cc16,#16a34a);
+  color:black;
+
+  padding:14px 26px;
+  border-radius:60px;
+
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.nav-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:100px 8%;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-tag{
+  display:inline-block;
+
+  background:rgba(255,215,0,.12);
+  border:1px solid rgba(255,215,0,.25);
+
+  color:gold;
+
+  padding:12px 18px;
+  border-radius:60px;
+
+  margin-bottom:24px;
+
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:76px;
+  line-height:1;
+  margin-bottom:24px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  color:#a3e635;
+}
+
+.hero p{
+  color:#d1d5db;
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:35px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 28px;
+  border-radius:60px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#84cc16,#16a34a);
+  color:black;
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.15);
+  color:white;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+}
+
+.hero-card{
+  position:relative;
+}
+
+.hero-card img{
+  width:100%;
+  border-radius:36px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.4);
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+  padding:30px 8% 80px;
+}
+
+.timer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.time-box{
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:28px;
+
+  padding:30px;
+  text-align:center;
+}
+
+.time-box h2{
+  font-size:52px;
+  color:#a3e635;
+}
+
+.time-box p{
+  margin-top:8px;
+  color:#d1d5db;
+}
+
+/* =========================
+   OFFER BANNER
+========================= */
+
+.offer-banner{
+  padding:20px 8% 80px;
+}
+
+.offer-box{
+  background:linear-gradient(135deg,#0c1f13,#102816);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:40px;
+
+  padding:50px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.discount{
+  font-size:88px;
+  line-height:1;
+  font-weight:800;
+  color:#a3e635;
+}
+
+.old-price{
+  text-decoration:line-through;
+  color:#ef4444;
+  font-size:32px;
+  margin-top:12px;
+}
+
+.new-price{
+  font-size:72px;
+  font-weight:800;
+  margin-top:10px;
+}
+
+.offer-note{
+  margin-top:18px;
+  color:#d1d5db;
+  line-height:1.8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.section{
+  padding:100px 8%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:56px;
+  margin-bottom:60px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:32px;
+
+  padding:35px;
+
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card-icon{
+  font-size:52px;
+  margin-bottom:20px;
+}
+
+.card h3{
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+.card p{
+  color:#d1d5db;
+  line-height:1.8;
+}
+
+/* =========================
+   INCLUDED
+========================= */
+
+.included-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.include-box{
+  background:#0c1b12;
+
+  border:1px solid rgba(255,255,255,.06);
+
+  border-radius:30px;
+
+  padding:35px;
+}
+
+.include-box h3{
+  margin-bottom:24px;
+  font-size:28px;
+  color:#a3e635;
+}
+
+.include-box ul{
+  list-style:none;
+}
+
+.include-box li{
+  margin-bottom:14px;
+  color:#d1d5db;
+}
+
+.include-box li::before{
+  content:"✔ ";
+  color:#84cc16;
+}
+
+/* =========================
+   BONUS
+========================= */
+
+.bonus{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.bonus-card{
+  background:linear-gradient(135deg,#152617,#1d3520);
+
+  border-radius:28px;
+  padding:35px;
+
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.bonus-card h3{
+  color:#a3e635;
+  margin-bottom:15px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:120px 8%;
+  text-align:center;
+}
+
+.cta-box{
+  background:linear-gradient(135deg,#101f14,#18291b);
+
+  border-radius:40px;
+
+  padding:80px 50px;
+
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.cta h2{
+  font-size:64px;
+  margin-bottom:20px;
+}
+
+.cta p{
+  max-width:800px;
+  margin:auto;
+
+  line-height:1.9;
+  color:#d1d5db;
+
+  margin-bottom:35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:40px 8%;
+  border-top:1px solid rgba(255,255,255,.06);
+
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer p{
+  color:#d1d5db;
+}
+
+/* =========================
+   FLOATING ITEMS
+========================= */
+
+.lantern{
+  position:fixed;
+  font-size:28px;
+  opacity:.5;
+
+  animation:floatLantern 6s ease-in-out infinite;
+}
+
+.l1{
+  left:4%;
+  top:20%;
+}
+
+.l2{
+  right:4%;
+  top:30%;
+  animation-delay:2s;
+}
+
+@keyframes floatLantern{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-18px);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:980px){
+
+  .hero-grid,
+  .offer-box{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    text-align:center;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .discount{
+    font-size:62px;
+  }
+
+  .new-price{
+    font-size:52px;
+  }
+
+  .timer{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .cta h2{
+    font-size:42px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .timer{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .time-box h2{
+    font-size:40px;
+  }
+
+  .offer-box{
+    padding:30px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg-glow">
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+</div>
+
+<div class="lantern l1">🌙</div>
+<div class="lantern l2">🏮</div>
+
+<!-- NAVBAR -->
+<nav>
+
+  <div class="logo">
+    IACC <span>Network</span>
+  </div>
+
+  <a href="#book" class="nav-btn">
+    Book Promo
+  </a>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-grid">
+
+    <div>
+
+      <div class="hero-tag">
+        ✨ Special Eid Website Bonanza
+      </div>
+
+      <h1>
+        Build Your
+        <span>Professional Website</span>
+        At An Unbeatable Price
+      </h1>
+
+      <p>
+        Celebrate Eid with a premium website package
+        designed for businesses, entrepreneurs,
+        startups, brands, portfolios and organizations.
+        Fast, modern and fully responsive.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#book" class="btn btn-primary">
+          Claim Offer
+        </a>
+
+        <a href="#features" class="btn btn-secondary">
+          View Features
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <!-- REPLACE WITH YOUR IMAGE -->
+      <img src="Flier.png" alt="IACC Eid Promo">
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown">
+
+  <div class="timer">
+
+    <div class="time-box">
+      <h2 id="days">00</h2>
+      <p>Days</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="hours">00</h2>
+      <p>Hours</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="minutes">00</h2>
+      <p>Minutes</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="seconds">00</h2>
+      <p>Seconds</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- OFFER -->
+<section class="offer-banner">
+
+  <div class="offer-box">
+
+    <div>
+
+      <div class="discount">
+        73.34% OFF
+      </div>
+
+      <div class="old-price">
+        Was ₦150,000
+      </div>
+
+      <div class="new-price">
+        ₦39,990
+      </div>
+
+    </div>
+
+    <div>
+
+      <h2 style="font-size:40px;margin-bottom:20px;">
+        Limited 7-Day Eid Promo
+      </h2>
+
+      <p class="offer-note">
+        Promo runs from Monday 25th May 2026
+        to Sunday 31st May 2026.
+        Limited slots available.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+
+  <h2 class="section-title">
+    Powerful Features
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Fast Loading</h3>
+      <p>
+        Optimized website performance with
+        mobile responsive layouts.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>Responsive Design</h3>
+      <p>
+        Your website works beautifully on
+        phones, tablets and desktops.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>SEO Ready</h3>
+      <p>
+        Structured for better Google visibility
+        and online growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <h3>WhatsApp Integration</h3>
+      <p>
+        Customers can contact you instantly
+        through WhatsApp chat.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INCLUDED -->
+<section class="section">
+
+  <h2 class="section-title">
+    What's Included
+  </h2>
+
+  <div class="included-grid">
+
+    <div class="include-box">
+
+      <h3>Pages Included</h3>
+
+      <ul>
+        <li>Front Page (Home)</li>
+        <li>About Us Page</li>
+        <li>Contact Page</li>
+      </ul>
+
+    </div>
+
+    <div class="include-box">
+
+      <h3>Core Features</h3>
+
+      <ul>
+        <li>Modern UI Design</li>
+        <li>SEO Friendly Structure</li>
+        <li>Contact Form Integration</li>
+        <li>Cross Browser Compatible</li>
+        <li>Social Media Integration</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BONUSES -->
+<section class="section">
+
+  <h2 class="section-title">
+    Exclusive Free Bonuses
+  </h2>
+
+  <div class="bonus">
+
+    <div class="bonus-card">
+      <h3>1 Month Free Maintenance</h3>
+      <p>
+        We help maintain your website
+        after launch for one month.
+      </p>
+    </div>
+
+    <div class="bonus-card">
+      <h3>1 Year Free .COM Domain</h3>
+      <p>
+        Receive a free professional
+        domain name for your business.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta" id="book">
+
+  <div class="cta-box">
+
+    <h2>
+      Let's Put Your Business Online
+    </h2>
+
+    <p>
+      Build a stunning online presence
+      for your business, startup or brand
+      with our limited Eid Website Bonanza.
+    </p>
+
+    <a href="https://wa.me/2348131999966" class="btn btn-primary">
+      Book Via WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2026 IACC Network
+  </p>
+
+  <p>
+    Your Vision. Our Code. Real Impact.
+  </p>
+
+</footer>
+
+<script>
+
+/* =========================
+   COUNTDOWN TIMER
+========================= */
+
+const endDate = new Date("2026-05-31T23:59:59").getTime();
+
+const countdown = setInterval(() => {
+
+  const now = new Date().getTime();
+
+  const distance = endDate - now;
+
+  if(distance < 0){
+
+    clearInterval(countdown);
+
+    document.querySelector(".timer").innerHTML =
+    "<h2>PROMO ENDED</h2>";
+
+    return;
+  }
+
+  const days = Math.floor(
+    distance / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60))
+    / (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (distance % (1000 * 60))
+    / 1000
+  );
+
+  document.getElementById("days").innerHTML =
+  String(days).padStart(2,'0');
+
+  document.getElementById("hours").innerHTML =
+  String(hours).padStart(2,'0');
+
+  document.getElementById("minutes").innerHTML =
+  String(minutes).padStart(2,'0');
+
+  document.getElementById("seconds").innerHTML =
+  String(seconds).padStart(2,'0');
+
+},1000);
+
+</script>
+
+</body>
+</html>
