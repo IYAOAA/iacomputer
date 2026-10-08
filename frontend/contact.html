@@ -11,6 +11,16 @@
 
   <!-- Shared CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Leaflet Map -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
 </head>
 
    <a href="https://wa.me/2348131999966" 
@@ -74,6 +84,19 @@
   </section>
 
   <section class="reveal">
+  <h2 class="section-title">Find Us</h2>
+
+  <div class="card">
+    <p>
+      Visit us at No 4, Round About Plaza, Opp. Suleja Garage,
+      Suleja, Niger State, Nigeria.
+    </p>
+
+    <div id="map"></div>
+  </div>
+</section>
+
+  <section class="reveal">
   <div class="card" style="text-align:center;">
 
     <h2>Contact us for enquiries</h2>
@@ -120,6 +143,26 @@
  <footer>
   © 2025 I A Computer Academy — Growing Skills, Building Futures.
 </footer>
+
+<script>
+  const lat = 9.176931;
+  const lng = 7.180942;
+
+  const map = L.map('map').setView([lat, lng], 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const marker = L.marker([lat, lng]).addTo(map);
+
+  marker.bindPopup(`
+    <strong>IACC Network</strong><br>
+    No 4, Round About Plaza<br>
+    Opp. Suleja Garage<br>
+    Suleja, Niger State, Nigeria
+  `).openPopup();
+</script>
 
 <!-- Shared JS -->
 <script src="js/main.js"></script>
